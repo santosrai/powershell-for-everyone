@@ -33,3 +33,26 @@ Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "AppLog" -Des
 Unregister-ScheduledTask -TaskName applog -Confirm:$false
 
 ```
+
+
+* AutoSuggestion Setting for Powershell
+
+1. Check Profile of PWSH
+```ps1
+Test-Path $PROFILE
+# return true if available
+```
+2. Create new profle (if not available)
+```ps1
+New-Item -Path $PROFILE -ItemType file -Force
+
+```
+3. pen profile with any editor
+
+4. Edit $profile with 
+```ps1
+Import-Module PSReadLine
+Set-PSReadLineOption -PredictionSource History
+
+
+
