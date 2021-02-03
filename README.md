@@ -53,6 +53,11 @@ New-Item -Path $PROFILE -ItemType file -Force
 ```ps1
 Import-Module PSReadLine
 Set-PSReadLineOption -PredictionSource History
+```
 
+* Bulk File Rename
+```ps1
+Get-ChildItem -Filter "*current*" -Recurse | Rename-Item -NewName {$_.name -replace 'current','new' } 
+```
 
 
