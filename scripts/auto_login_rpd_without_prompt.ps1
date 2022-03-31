@@ -21,6 +21,11 @@ try{
 
     # open remote desktop
     mstsc /v:$Server
+    
+    Timeout 5
+
+    # delete the credential
+    Cmdkey.exe /delete:TERMSRV/$Server
 } catch {
     echo ""
     echo "Connection Error"
